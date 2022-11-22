@@ -6,32 +6,53 @@
     <head>
         <?php require(get_path('public/partials/head.php')); ?>
         <title>Wanderlust Co&period;</title>
+        <script src="https://kit.fontawesome.com/7cd27e29fe.js" crossorigin="anonymous"></script>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <div class="content-wrapper">
-            <header class="flex items-center bg-gray-600 h-20">
-                <nav class="flex justify-between">
-                    <ul class="flex">
-                        <li><a class="font-bold text-white text-3xl" href="#" title="">WanderLust Co&period;</a></li>
-                        <li><a href="#" title="">
-                            <div class="w-10 h-10 rounded-full bg-gray-50"></div>
-                        </a></li>
-                        <li><a href="#" title="">
-                            <div class="w-10 h-10 rounded-full bg-gray-50"></div>
-                        </a></li>
-                    </ul>
-                </nav>
-            </header>
-            
+        <header class="flex items-center bg-gray-600 h-20">
+            <?php include(get_path('public/partials/header.php')); ?>
+        </header>
+        <div class="w-full h-full content-wrapper py-12 container mx-auto">
             <main>
-                <div class="text-3xl font-bold underline">
-                    <p></p>
+                <!-- SEARCH BAR -->
+                <div class="search-container">
+                    <form class="flex justify-center" action="#">
+                        <input class="p-4 mr-4 w-full rounded-full border-2 border-black" type="text" placeholder="Search..." name="search">
+                        <button class="icon bg-gray-500 rounded-full p-4" type="submit"><i class="fa fa-search fa-xl"></i></button>
+                    </form>
+                </div>
+                <div class="bg-gray-500 w-full h-[26rem] mt-12"></div> <!-- Image Slider -->
+                <div class="user-recs flex mt-16">
+                    <div class="card mr-4 border-2 border-black">
+                        <img src="images/banner.jpg" alt="banner">
+                        <div class="info py-6 text-center">
+                            <h3>DESTINATION</h3>
+                            <p>$$$</p>
+                        </div>
+                        <div class="flex justify-center rounded w-full h-10 bg-red-200 items-center"><a class="text-lg" href="#">SEE MORE</a></div>
+                    </div>
+                    <div class="card mr-4 border-2 border-black">
+                        <img src="images/banner.jpg" alt="banner">
+                        <div class="info py-6 text-center">
+                            <h3>DESTINATION</h3>
+                            <p>$$$</p>
+                        </div>
+                        <div class="flex justify-center rounded w-full h-10 bg-red-200 items-center"><a class="text-lg" href="#">SEE MORE</a></div>
+                    </div>
+                    <div class="card border-2 border-black">
+                        <img src="images/banner.jpg" alt="banner">
+                        <div class="info py-6 text-center">
+                            <h3>DESTINATION</h3>
+                            <p>$$$</p>
+                        </div>
+                        <div class="flex justify-center rounded w-full h-10 bg-red-200 items-center"><a class="text-lg" href="#">SEE MORE</a></div>
+                    </div>
                 </div>
             </main>
         </div>
-        <footer>
-            <p>&copy; 2022 created by WanderLust Co&period; &verbar; All Rights Reserved&period;</p>
+        <footer class="flex items-center py-12 container mx-auto">
+            <?php include(get_path('public/partials/footer.php')); ?>
         </footer>
     </body>
 </html>

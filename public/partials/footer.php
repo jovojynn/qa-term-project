@@ -1,0 +1,1 @@
+<p>&copy; 2022 created by WanderLust Co&period; &verbar; All Rights Reserved&period;</p>
