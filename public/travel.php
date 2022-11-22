@@ -22,7 +22,7 @@
             </nav>
         </header>
         <main>
-
+            
         </main>
         <footer>
             <p>&copy; 2022 created by Jovolynn Gragasin &verbar; All Rights Reserved&period;</p>
