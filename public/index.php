@@ -24,30 +24,34 @@
                 </div>
                 <div class="bg-gray-500 w-full h-[26rem] mt-12"></div> <!-- Image Slider -->
                 <div class="user-recs flex mt-16">
-                    <div class="card mr-4 border-2 border-black">
+
+                    <div id="1" class="card mr-4 border-2 border-black">
                         <img src="images/banner.jpg" alt="banner">
                         <div class="info py-6 text-center">
-                            <h3>DESTINATION</h3>
+                            <h3>DESTINATION 01</h3>
                             <p>$$$</p>
                         </div>
                         <div class="flex justify-center rounded w-full h-10 bg-red-200 items-center"><a class="text-lg" href="#">SEE MORE</a></div>
                     </div>
-                    <div class="card mr-4 border-2 border-black">
+
+                    <div id="2" class="card mr-4 border-2 border-black">
                         <img src="images/banner.jpg" alt="banner">
                         <div class="info py-6 text-center">
-                            <h3>DESTINATION</h3>
+                            <h3>DESTINATION 02</h3>
                             <p>$$$</p>
                         </div>
                         <div class="flex justify-center rounded w-full h-10 bg-red-200 items-center"><a class="text-lg" href="#">SEE MORE</a></div>
                     </div>
-                    <div class="card border-2 border-black">
+
+                    <div id="3" class="card border-2 border-black">
                         <img src="images/banner.jpg" alt="banner">
                         <div class="info py-6 text-center">
-                            <h3>DESTINATION</h3>
+                            <h3>DESTINATION 03</h3>
                             <p>$$$</p>
                         </div>
                         <div class="flex justify-center rounded w-full h-10 bg-red-200 items-center"><a class="text-lg" href="#">SEE MORE</a></div>
                     </div>
+
                 </div>
             </main>
         </div>
