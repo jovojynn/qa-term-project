@@ -1,8 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*{html,php}"],
+  content: ["./**/**/*.{html,php}", './node_modules/tw-elements/dist/js/**/*.js'],
   theme: {
-    extend: {},
+     fontFamily: {
+        'playfair': ['"Playfair Display"', 'serif'],
+        'quicksand': ['Quicksand', 'sans-serif'],
+      },
+      colors: {
+        'pink': '#EDB098',
+        'coral': '#EA9087',
+        'purple': '#CB8D9A',
+        'blue': '#A3BFD7',
+        'white': '#fff',
+        'black': '#000'
+      },
+    extend: {
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
 }
