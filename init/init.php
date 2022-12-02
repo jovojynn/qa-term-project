@@ -13,24 +13,19 @@
     // This makes it so that in order to run this init.php file it requires the functions.php file otherwise it would cause a fatal error if the functions.php file did not exist.
     require('functions.php');
 
-    // Requires the Task class to run this file.
-    // require(get_path('app/Classes/Task.php') );
+    // Requires the Location class to run this file.
+    require(get_path('init/Classes/Location.php'));
 
-    // Requires the User Class to run  this file.
-    // require( get_path('/app/Classes/User.php') );
+    // Requires the Review Class to run  this file.
+    require( get_path('init/Classes/Review.php'));
 
-    // Requires the Session Class to run this file.
-    // require( get_path('/app/Classes/Session.php') );
 
     // This line uses our user defined function called 'connect_db' located in functions.php.
     // It runs the function that connects us to our database upon initialization.
     $db = connect_db();
 
-    // This initializes the session for the user login.
-    // $session = new Session();
-
     // This uses :: which is a scope resolution operator so that we can access things like constants, methods, and properties at a class level.
     
     // In this case we are accessing the method called db_set inside of the class Task and User.
-    // Task::db_set($db);
-    // User::db_set($db);
+    Location::db_set($db);
+    Review::db_set($db);
