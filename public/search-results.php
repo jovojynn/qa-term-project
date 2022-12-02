@@ -1,25 +1,25 @@
 <?php
     require('../init/init.php');
 
-    // if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    //     $search_results = $_POST['search'];
+        $search_results = $_POST['search'];
 
-    //     $search_db = "SELECT * FROM destinations";
-    //     $search_db .= "WHERE region LIKE '%" . $search_results . "'";
+        $search_db = "SELECT * FROM destinations";
+        $search_db .= "WHERE region LIKE '%" . $search_results . "'";
         
-    //     // $results = $conn::$db->query($search_db);
-    //     // return $results;
+        // $results = $conn::$db->query($search_db);
+        // return $results;
 
-    // }
-    $search_results = $_POST['search'];
-    if(isset($search_results)) {
-        require find_by_search();
-
-        if(count($results) > 0) {foreach($results as $r) {
-            printf("<div>%s - %s</div>", $r["region"], $r["city"]);
-        }} else { echo "No Results Found"; }
     }
+    // $search_results = $_POST['search'];
+    // if(isset($search_results)) {
+    //     require find_by_search();
+
+    //     if(count($results) > 0) {foreach($results as $r) {
+    //         printf("<div>%s - %s</div>", $r["region"], $r["city"]);
+    //     }} else { echo "No Results Found"; }
+    // }
 
     
     $locations = Location::find_all($search_results);

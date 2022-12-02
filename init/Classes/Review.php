@@ -4,7 +4,7 @@
         static protected $db;
 
         public $id;
-        public $username;
+        public $name;
         public $title;
         public $body;
         public $location_id;
@@ -17,7 +17,7 @@
         // This is a constructor for setting the value for these properties.
         public function __construct($props = []) {
             $this->id = $props['id'] ?? null;
-            $this->username = $props['username'] ?? null;
+            $this->name = $props['name'] ?? null;
             $this->title = $props['title'] ?? null;
             $this->body = $props['body'] ?? null;
             $this->location_id = $props = $props['location_id'] ?? null;
@@ -25,9 +25,8 @@
 
         // This is a public function called Create that will grab the values for each property inside the database and will populate the new task item onto the database inside the table of tasks.
         public function create() {
-            $sql = "INSERT INTO reviews (username, title, body) ";
-            $sql .= "VALUES (";
-            $sql .= "'" . $this->username . "', ";
+            $sql = "INSERT INTO reviews (name, title, body, location_id) VALUES (";
+            $sql .= "'" . $this->name . "', ";
             $sql .= "'" . $this->title . "', ";
             $sql .= "'" . $this->body . "', ";
             $sql .= "'" . $this->location_id . "') ";

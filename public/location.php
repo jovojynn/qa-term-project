@@ -6,7 +6,7 @@
 
         $review = new Review($review_args);
         $review->create();
-        // dd($review);
+        dd($review);
     }
     $location_id = 7;
     $reviews = Review::find_reviews($location_id);
@@ -167,7 +167,7 @@
                     <!-- WRITE REVIEW FORM -->
                     <form method="POST" action="location.php">
                         <div class="border-solid border-b border-[#E3E3E3] flex font-quicksand text-lg">
-                            <input class="pr-8 pl-8 pt-4 pb-4 " type="text" placeholder="Enter your username"  name="username">
+                            <input class="pr-8 pl-8 pt-4 pb-4 " type="text" placeholder="Enter your username"  name="name">
                             <input class="pr-8 pl-8 pt-4 pb-4 border-solid border-l border-[#E3E3E3]" type="text" placeholder="Review summary" name="title">
                         </div>
                         <input class="w-full p-8 font-quicksand text-lg" type="text" placeholder="Write your review here..." name="body">

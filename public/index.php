@@ -107,7 +107,7 @@
                 <!-- USER RECOMMENDATIONS -->
                 <section class="user-recs mt-30">
                     <h2 class="font-quicksand font-semibold text-4xl mb-4">User Recommendations</h2>
-                    <div class="container flex">
+                    <div class="container flex justify-around">
                         <?php while($location = $locations->fetch_assoc()): ?>
                             <div class="flex-wrap col-span-3">
                                 <?php include('partials/components/card.php'); ?>
