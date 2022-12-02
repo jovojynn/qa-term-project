@@ -1,6 +1,19 @@
 <?php
     require('../init/init.php');
 
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $search_results = $_POST;
+
+        $search_region = "SELECT * FROM destinations WHERE region LIKE '%'" . $search_results . "'";
+            
+        $results = self::$db->query($sql);
+        return $results;
+
+    }
+
+
+    $locations = Location::find_recs();
+
 ?><!DOCTYPE html>
 <html lang="en">
     <!-- HEAD.PHP -->
@@ -23,8 +36,8 @@
                 <div class="search-container mt-12 mb-14">
                     <?php include(get_path('public/partials/components/searchbar.php')); ?>
                 </div>
+                <!-- IMAGE SLIDER -->
                 <section class="img-slider mt-16 mb-14">
-                    <!-- Image Slider Container -->
                     <div id="carousel" class="w-full h-full carousel slide relative" data-bs-ride="carousel">
                         <div class="carousel-indicators absolute right-0 top-[29rem] left-0 flex justify-center p-0 mt-4">
                             <button
@@ -97,43 +110,15 @@
                         </div>
                     </div>
                 </section>
-                
+                <!-- USER RECOMMENDATIONS -->
                 <section class="user-recs mt-30">
                     <h2 class="font-quicksand font-semibold text-4xl mb-4">User Recommendations</h2>
                     <div class="container flex">
-                        
-                        <a href="#" title="Universal Studios Japan">
-                            <div class="card bg-white drop-shadow-lg h-[27rem] mr-4">
-                                <img src="./images/universal-japan.jpg" alt="Universal Studios Japan">
-                                <div class="card-info p-4">
-                                    <h3 class="font-quicksand font-bold text-xl">Universal Studios Japan</h3>
-                                    <h5 class="location font-quicksand text-lg text-[#838383]">Osaka</h5>
-                                    <?php include(get_path('public/partials/components/star-rating-md.php')); ?>
-                                </div>
+                        <?php while($location = $locations->fetch_assoc()): ?>
+                            <div class="flex-wrap col-span-3">
+                                <?php include('partials/components/card.php'); ?>
                             </div>
-                        </a>
-                        
-                        <a href="#" title="Garden of the Sleeping Giant">
-                            <div class="card bg-white drop-shadow-lg h-[27rem] mr-4">
-                                <img src="./images/garden-sleep.jpg" alt="Garden of the Sleeping Giant">
-                                <div class="card-info p-4">
-                                    <h3 class="font-quicksand font-bold text-xl">Garden of the Sleeping Giant</h3>
-                                    <h5 class="location font-quicksand text-lg text-[#838383]">Nadi</h5>
-                                    <?php include(get_path('public/partials/components/star-rating-md.php')); ?>
-                                </div>
-                            </div>
-                        </a>    
-                        
-                        <a href="#" title="Hacienda La Laborcilla">
-                            <div class="card bg-white drop-shadow-lg h-[27rem]">
-                                <img src="./images/hacienda.jpg" alt="Hacienda La Laborcilla">
-                                <div class="card-info p-4">
-                                    <h3 class="font-quicksand font-bold text-xl">Hacienda La Laborcilla</h3>
-                                    <h5 class="location font-quicksand text-lg text-[#838383]">Queretaro City</h5>
-                                    <?php include(get_path('public/partials/components/star-rating-md.php')); ?>
-                                </div>
-                            </div>
-                        </a>
+                        <?php endwhile; ?>
                     </div>
                 </section>
             </main>

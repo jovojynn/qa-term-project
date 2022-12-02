@@ -1,5 +1,6 @@
 <?php
     require('../init/init.php');
+    require('../init/Classes/Review.php');
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -166,7 +167,11 @@
                 </div>
                 <div class="write-review w-full h-96 border-solid border border-[#E3E3E3] mt-16 shadow-lg relative">
                     <form action="#">
-                        <input class="w-full p-8 font-quicksand text-lg" type="text" placeholder="Write your review here...">
+                        <div class="border-solid border-b border-[#E3E3E3] flex font-quicksand text-lg">
+                            <input class="pr-8 pl-8 pt-4 pb-4 " type="text" placeholder="Enter your name" name="name">
+                            <input class="pr-8 pl-8 pt-4 pb-4 border-solid border-l border-[#E3E3E3]" type="text" placeholder="Review summary" name="title">
+                        </div>
+                        <input class="w-full p-8 font-quicksand text-lg" type="text" placeholder="Write your review here..." name="body">
                         <div class="w-full h-20 bg-[#FFF7F4] flex justify-between items-center p-8 absolute bottom-0">
                             <ul class="flex justify-center">
                                 <li>

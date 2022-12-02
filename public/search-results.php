@@ -28,7 +28,7 @@
                 </div>
                 
                 <!-- SEARCH RESULTS NEED TO GO HERE -->
-                <h1 class="font-quicksand font-bold text-5xl">Found 4 Resutls For "BC"</h1>
+                <h1 class="font-quicksand font-bold text-5xl">Found <?php ?> Results For "<?php echo h($search_results); ?>"</h1>
                 <div class="container flex flex-wrap justify-evenly">
                     <div class="mt-10">
                         <?php include(get_path('public/partials/components/card.php')); ?>
