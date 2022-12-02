@@ -3,13 +3,15 @@
 
 ?><!DOCTYPE html>
 <html lang="en">
+    <!-- HEAD.PHP -->
     <head>
+        <!-- Head Partial-->
         <?php require(get_path('public/partials/head.php')); ?>
-        <title>Wanderlust Co&period;</title>
-        <script src="https://kit.fontawesome.com/7cd27e29fe.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
         
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <title>Wanderlust Co&period;</title>
+         <!-- Font Awesome & Carousel Scripts -->
+        <script src="https://kit.fontawesome.com/7cd27e29fe.js" crossorigin="anonymous"></script>
+        <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
     </head>
     <body>
         <header class="flex items-center bg-[#FFF7F4] h-20">
@@ -19,14 +21,11 @@
             <main>
                 <!-- SEARCH BAR -->
                 <div class="search-container mt-12 mb-14">
-                    <form class="flex justify-center" action="#">
-                        <input class="font-quicksand p-4 mr-4 w-full rounded-full border-2 border-[#DADADA]" type="text" placeholder="Where to?" name="search">
-                        <button class="icon bg-pink rounded-full p-4" type="submit"><i class="fa text-white fa-search fa-xl"></i></button>
-                    </form>
+                    <?php include(get_path('public/partials/components/searchbar.php')); ?>
                 </div>
-                <section class="img-slider h-[35rem] mt-16">
+                <section class="img-slider mt-16 mb-14">
                     <!-- Image Slider Container -->
-                    <div id="carousel" class="w-full h-[26rem] carousel slide relative" data-bs-ride="carousel">
+                    <div id="carousel" class="w-full h-full carousel slide relative" data-bs-ride="carousel">
                         <div class="carousel-indicators absolute right-0 top-[29rem] left-0 flex justify-center p-0 mt-4">
                             <button
                             type="button"
@@ -109,6 +108,7 @@
                                 <div class="card-info p-4">
                                     <h3 class="font-quicksand font-bold text-xl">Universal Studios Japan</h3>
                                     <h5 class="location font-quicksand text-lg text-[#838383]">Osaka</h5>
+                                    <?php include(get_path('public/partials/components/star-rating-md.php')); ?>
                                 </div>
                             </div>
                         </a>
@@ -119,6 +119,7 @@
                                 <div class="card-info p-4">
                                     <h3 class="font-quicksand font-bold text-xl">Garden of the Sleeping Giant</h3>
                                     <h5 class="location font-quicksand text-lg text-[#838383]">Nadi</h5>
+                                    <?php include(get_path('public/partials/components/star-rating-md.php')); ?>
                                 </div>
                             </div>
                         </a>    
@@ -129,6 +130,7 @@
                                 <div class="card-info p-4">
                                     <h3 class="font-quicksand font-bold text-xl">Hacienda La Laborcilla</h3>
                                     <h5 class="location font-quicksand text-lg text-[#838383]">Queretaro City</h5>
+                                    <?php include(get_path('public/partials/components/star-rating-md.php')); ?>
                                 </div>
                             </div>
                         </a>
