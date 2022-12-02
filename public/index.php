@@ -2,24 +2,19 @@
     require('../init/init.php');
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $search_results = $_POST;
 
-        $search_region = "SELECT * FROM destinations WHERE region LIKE '%'" . $search_results . "'";
-            
-        $results = self::$db->query($sql);
-        return $results;
+        $search_results = $_POST['search'];
 
+        $search_db = Location::find_by_search($search_results);
     }
-
 
     $locations = Location::find_recs();
 
 ?><!DOCTYPE html>
 <html lang="en">
-    <!-- HEAD.PHP -->
     <head>
         <!-- Head Partial-->
-        <?php require(get_path('public/partials/head.php')); ?>
+        <?php require(get_path('public/partials/global/head.php')); ?>
         
         <title>Wanderlust Co&period;</title>
          <!-- Font Awesome & Carousel Scripts -->
@@ -27,9 +22,8 @@
         <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
     </head>
     <body>
-        <header class="flex items-center bg-[#FFF7F4] h-20">
-            <?php include(get_path('public/partials/header.php')); ?>
-        </header>
+        <!-- Header Partial -->
+        <?php include(get_path('public/partials/global/header.php')); ?>
         <div class="w-full h-full content-wrapper py-12 container mx-auto">
             <main>
                 <!-- SEARCH BAR -->
@@ -123,8 +117,7 @@
                 </section>
             </main>
         </div>
-        <footer class="flex items-center justify-center py-12 container mx-auto">
-            <?php include(get_path('public/partials/footer.php')); ?>
-        </footer>
+        <!-- Footer Partial -->
+        <?php include(get_path('public/partials/global/footer.php')); ?>
     </body>
 </html>

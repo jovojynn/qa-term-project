@@ -1,4 +1,4 @@
-<a href="#" title="Universal Studios Japan">
+<a href="location.php" title="Universal Studios Japan">
     <div class="card bg-white drop-shadow-lg h-[27rem] mr-4">
         <img src="./images/<?php echo h($location['image_url']); ?>" alt="<?php echo h($location['name']); ?>">
         <div class="card-info p-4">

@@ -37,6 +37,15 @@
             $results = self::$db->query($sql);
             return $results;
         }
+
+        static public function find_by_search() {
+            $stmt = $sql->prepare("SELECT * FROM destinations WHERE region LIKE ? OR city LIKE ?");
+            $stmt->execute(["%". $_POST['search'] . "%", "%". $_POST['search'] . "%"]);
+            $results = $stmt->fetchAll();
+            if (isset($_POST["ajax"])) { echo json_encode($results); }
+        }
     }
 
 ?>
+
+§§§§±±±±§§

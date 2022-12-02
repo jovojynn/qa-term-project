@@ -1,13 +1,21 @@
 <?php
     require('../init/init.php');
-    require('../init/Classes/Review.php');
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $review_args = $_POST;
+
+        $review = new Review($review_args);
+        $review->create();
+        // dd($review);
+    }
+    $location_id = 7;
+    $reviews = Review::find_reviews($location_id);
 
 ?><!DOCTYPE html>
 <html lang="en">
-    <!-- HEAD.PHP -->
     <head>
         <!-- Head Partial-->
-        <?php require(get_path('public/partials/head.php')); ?>
+        <?php require(get_path('public/partials/global/head.php')); ?>
 
         <title>Wanderlust Co&period;</title>
          <!-- Font Awesome & Carousel Scripts -->
@@ -15,11 +23,11 @@
         <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
     </head>
     <body>
-        <header class="flex items-center bg-[#FFF7F4] h-20">
-            <?php include(get_path('public/partials/header.php')); ?>
-        </header>
+        <!-- Header Partial-->
+        <?php include(get_path('public/partials/global/header.php')); ?>
+
+        <!-- Image Slider Container -->
         <section class="img-slider h-[35rem]">
-            <!-- Image Slider Container -->
             <div id="carousel" class="w-full h-[26rem] carousel slide relative" data-bs-ride="carousel">
                 <div class="carousel-indicators absolute right-0 top-[31rem] left-0 flex justify-center p-0 mt-4">
                     <button
@@ -150,25 +158,16 @@
             <!-- RECENT REVIEWS -->
             <section class="reviews mt-16">
                 <h2 class="font-quicksand font-semibold text-4xl mb-14">Recent Reviews</h2>
-                <div class="review-container container flex w-full">
-                    <div class="review-card flex flex-col w-[35rem] h-96 p-12 border-solid border border-[#E3E3E3] shadow-lg">
-                        <div class="user-rating flex justify-between mb-4">
-                            <div class="user flex items-center">
-                                <i class="text-coral fa-xl fa-solid fa-circle-user mr-4"></i>
-                                <p class="font-quicksand font-semibold text-lg">Adam H.</p>
-                            </div>
-                            <?php include(get_path('public/partials/components/star-rating-sm.php')); ?>
-                        </div>
-                        <div class="review-summary font-quicksand text-lg">
-                            <h3 class="font-bold pb-2">Great Park!</h3>
-                            <p>Stanley park is a very nice place to visit. It’s quite huge so there’s lots to explore. I would recommend coming here if you’re stopping by in Vancouver.</p>
-                        </div>
-                    </div>
+                <div class="review-container container flex justify-between w-full">
+                    <?php while($review = $reviews->fetch_assoc()): ?>
+                        <?php include('partials/components/review-card.php'); ?>
+                    <?php endwhile; ?>
                 </div>
                 <div class="write-review w-full h-96 border-solid border border-[#E3E3E3] mt-16 shadow-lg relative">
-                    <form action="#">
+                    <!-- WRITE REVIEW FORM -->
+                    <form method="POST" action="location.php">
                         <div class="border-solid border-b border-[#E3E3E3] flex font-quicksand text-lg">
-                            <input class="pr-8 pl-8 pt-4 pb-4 " type="text" placeholder="Enter your name" name="name">
+                            <input class="pr-8 pl-8 pt-4 pb-4 " type="text" placeholder="Enter your username"  name="username">
                             <input class="pr-8 pl-8 pt-4 pb-4 border-solid border-l border-[#E3E3E3]" type="text" placeholder="Review summary" name="title">
                         </div>
                         <input class="w-full p-8 font-quicksand text-lg" type="text" placeholder="Write your review here..." name="body">
@@ -206,5 +205,7 @@
                 </div>
             </section>
         </div>
+        <!-- Footer Partial -->
+        <?php include(get_path('public/partials/global/footer.php')); ?>
     </body>
 </html>
