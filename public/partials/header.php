@@ -1,6 +1,6 @@
 <nav class="flex items-center justify-between py-12 container mx-auto">
     <div class="font-bold text-white text-3xl">
-        <a class="no-underline" href="#" title="Home">
+        <a class="no-underline" href="index.php" title="Home">
             <img src="./images/wanderlust-logo.png" alt="WanderLust Logo">
         </a>
     </div>
