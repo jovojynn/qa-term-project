@@ -4,30 +4,8 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $search_results = $_POST['search'];
-        
-        
-
         $search_db = Location::find_by_search($search_results, '');
-        // dd($search_db);
-
-
     }
-
-
-        // $results = $conn::$db->query($search_db);
-        // return $results;
-
-    // $search_results = $_POST['search'];
-    // if(isset($search_results)) {
-    //     require find_by_search();
-
-    //     if(count($results) > 0) {foreach($results as $r) {
-    //         printf("<div>%s - %s</div>", $r["region"], $r["city"]);
-    //     }} else { echo "No Results Found"; }
-    // }
-
-    
-    // $locations = ;
 ?><!DOCTYPE html>
 <html lang="en">
     <head>

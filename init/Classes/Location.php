@@ -50,14 +50,6 @@
             $stmt->execute();
             $results = $stmt->get_result();
             return $results;
-
-
-            // dd($sql);
-
-            
-            // $stmt->execute(["%". $_POST['search'] . "%", "%". $_POST['search'] . "%"]);
-            // $results = $stmt->fetchAll();
-            // if (isset($_POST["ajax"])) { echo json_encode($results); }
         }
     }
 

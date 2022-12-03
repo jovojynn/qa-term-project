@@ -1,9 +1,7 @@
 <?php
     require('../init/init.php');
-
     
     $locations = Location::find_recs();
-
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +11,6 @@
         <title>Wanderlust Co&period;</title>
          <!-- Font Awesome & Carousel Scripts -->
         <script src="https://kit.fontawesome.com/7cd27e29fe.js" crossorigin="anonymous"></script>
-        <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
     </head>
     <body>
         <!-- Header Partial -->
@@ -113,5 +110,6 @@
         </div>
         <!-- Footer Partial -->
         <?php include(get_path('public/partials/global/footer.php')); ?>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     </body>
 </html>

@@ -4,19 +4,12 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $review_args = $_POST;
         $review_args['location_id'] = 7;
-
-
-
-
         $review = new Review($review_args);
-        
-
         $review->create();
-
     }
+    
     $location_id = 7;
     $reviews = Review::find_reviews($location_id);
-
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,7 +19,6 @@
         <title>Wanderlust Co&period;</title>
          <!-- Font Awesome & Carousel Scripts -->
         <script src="https://kit.fontawesome.com/7cd27e29fe.js" crossorigin="anonymous"></script>
-        <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
     </head>
     <body>
         <!-- Header Partial-->
@@ -35,7 +27,7 @@
         <!-- Image Slider Container -->
         <section class="img-slider h-[35rem]">
             <div id="carousel" class="w-full h-[26rem] carousel slide relative" data-bs-ride="carousel">
-                <div class="carousel-indicators absolute right-0 top-[40rem] left-0 flex justify-center p-0 mt-4">
+                <div class="carousel-indicators absolute right-0 top-[36rem] left-0 flex justify-center p-0 mt-4">
                     <button
                     type="button"
                     data-bs-target="#carousel"
@@ -160,7 +152,6 @@
                     </div>
                 </div>
             </section>
-
             <!-- RECENT REVIEWS -->
             <section class="reviews mt-16">
                 <h2 class="font-quicksand font-semibold text-4xl mb-14">Recent Reviews</h2>
@@ -215,5 +206,6 @@
         </div>
         <!-- Footer Partial -->
         <?php include(get_path('public/partials/global/footer.php')); ?>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     </body>
 </html>
