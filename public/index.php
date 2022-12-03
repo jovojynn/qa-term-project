@@ -1,13 +1,7 @@
 <?php
     require('../init/init.php');
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $search_results = $_POST['search'];
-
-        $search_db = Location::find_by_search($search_results);
-    }
-
+    
     $locations = Location::find_recs();
 
 ?><!DOCTYPE html>

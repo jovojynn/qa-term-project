@@ -3,10 +3,16 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $review_args = $_POST;
+        $review_args['location_id'] = 7;
+
+
+
 
         $review = new Review($review_args);
+        
+
         $review->create();
-        dd($review);
+
     }
     $location_id = 7;
     $reviews = Review::find_reviews($location_id);

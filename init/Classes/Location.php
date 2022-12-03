@@ -38,11 +38,26 @@
             return $results;
         }
 
-        static public function find_by_search() {
-            $stmt = $sql->prepare("SELECT * FROM destinations WHERE region LIKE ? OR city LIKE ?");
-            $stmt->execute(["%". $_POST['search'] . "%", "%". $_POST['search'] . "%"]);
-            $results = $stmt->fetchAll();
-            if (isset($_POST["ajax"])) { echo json_encode($results); }
+        static public function find_by_search($region, $city) {
+
+            $sql = "SELECT * FROM destinations ";
+            $sql .= "WHERE region LIKE ?";
+            
+            $region_txt = "%{$region}%";
+
+            $stmt = self::$db->prepare($sql);
+            $stmt->bind_param('s', $region_txt);
+            $stmt->execute();
+            $results = $stmt->get_result();
+            return $results;
+
+
+            // dd($sql);
+
+            
+            // $stmt->execute(["%". $_POST['search'] . "%", "%". $_POST['search'] . "%"]);
+            // $results = $stmt->fetchAll();
+            // if (isset($_POST["ajax"])) { echo json_encode($results); }
         }
     }
 

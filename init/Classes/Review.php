@@ -31,6 +31,8 @@
             $sql .= "'" . $this->body . "', ";
             $sql .= "'" . $this->location_id . "') ";
 
+            // dd($sql);
+
             $results = self::$db->query($sql);
             return $results;
         }

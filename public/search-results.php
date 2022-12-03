@@ -4,14 +4,19 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $search_results = $_POST['search'];
-
-        $search_db = "SELECT * FROM destinations";
-        $search_db .= "WHERE region LIKE '%" . $search_results . "'";
         
+        
+
+        $search_db = Location::find_by_search($search_results, '');
+        // dd($search_db);
+
+
+    }
+
+
         // $results = $conn::$db->query($search_db);
         // return $results;
 
-    }
     // $search_results = $_POST['search'];
     // if(isset($search_results)) {
     //     require find_by_search();
@@ -22,7 +27,7 @@
     // }
 
     
-    $locations = Location::find_all($search_results);
+    // $locations = ;
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -47,7 +52,7 @@
                 <!-- SEARCH RESULTS NEED TO GO HERE -->
                 <h1 class="font-quicksand font-bold text-5xl">Found Results For "<?php echo h($search_results); ?>"</h1>
                 <div class="container flex flex-wrap justify-evenly">
-                    <?php while($location = $locations->fetch_assoc()): ?>
+                    <?php while($location = $search_db->fetch_assoc()): ?>
                         <!-- <div class="flex-wrap"> -->
                         <?php include('partials/components/card.php'); ?>
                         <!-- </div> -->
