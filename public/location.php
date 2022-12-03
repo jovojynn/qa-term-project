@@ -35,7 +35,7 @@
         <!-- Image Slider Container -->
         <section class="img-slider h-[35rem]">
             <div id="carousel" class="w-full h-[26rem] carousel slide relative" data-bs-ride="carousel">
-                <div class="carousel-indicators absolute right-0 top-[31rem] left-0 flex justify-center p-0 mt-4">
+                <div class="carousel-indicators absolute right-0 top-[40rem] left-0 flex justify-center p-0 mt-4">
                     <button
                     type="button"
                     data-bs-target="#carousel"
@@ -164,9 +164,11 @@
             <!-- RECENT REVIEWS -->
             <section class="reviews mt-16">
                 <h2 class="font-quicksand font-semibold text-4xl mb-14">Recent Reviews</h2>
-                <div class="review-container container flex justify-between w-full">
+                <div class="review-container flex flex-wrap grow-1 justify-evenly w-full">
                     <?php while($review = $reviews->fetch_assoc()): ?>
-                        <?php include('partials/components/review-card.php'); ?>
+                        <div class="mb-4">
+                            <?php include('partials/components/review-card.php'); ?>
+                        </div>
                     <?php endwhile; ?>
                 </div>
                 <div class="write-review w-full h-96 border-solid border border-[#E3E3E3] mt-16 shadow-lg relative">
