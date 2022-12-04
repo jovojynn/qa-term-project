@@ -1,6 +1,6 @@
 <?php 
     // These constants define the location of where our root directory is located.
-    define('WWW_ROOT', 'http:/localhost');
+    define('WWW_ROOT', 'http://localhost');
     define('PROJECT_ROOT', dirname(__DIR__, 1));
 
     // These are Database constants that are related to the columns in our table on MySQL. 
