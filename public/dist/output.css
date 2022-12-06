@@ -3543,6 +3543,10 @@ textarea.form-control.is-invalid {
   margin-right: 1rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .block {
   display: block;
 }
