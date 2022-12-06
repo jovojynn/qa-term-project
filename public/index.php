@@ -24,7 +24,7 @@
                 <!-- IMAGE SLIDER -->
                 <section class="img-slider mt-16 mb-14">
                     <div id="carousel" class="w-full h-full carousel slide relative" data-bs-ride="carousel">
-                        <div class="carousel-indicators absolute right-0 top-[35rem] left-0 flex justify-center p-0 mt-4">
+                        <div class="carousel-indicators absolute right-0 top-[30rem] left-0 flex justify-center">
                             <button
                             type="button"
                             data-bs-target="#carousel"
