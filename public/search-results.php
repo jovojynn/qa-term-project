@@ -28,7 +28,7 @@
                 </div>
                 
                 <!-- SEARCH RESULTS NEED TO GO HERE -->
-                <h1 class="font-quicksand font-bold text-5xl">Found Results For "<?php echo h($search_results); ?>"</h1>
+                <h1 class="font-quicksand font-bold text-5xl mb-12">Found Results For "<?php echo h($search_results); ?>"</h1>
                 <div class="container flex flex-wrap justify-evenly">
                     <?php while($location = $search_db->fetch_assoc()): ?>
                         <!-- <div class="flex-wrap"> -->

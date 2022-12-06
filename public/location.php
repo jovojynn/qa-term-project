@@ -27,7 +27,7 @@
         <!-- Image Slider Container -->
         <section class="img-slider h-[35rem]">
             <div id="carousel" class="w-full h-[26rem] carousel slide relative" data-bs-ride="carousel">
-                <div class="carousel-indicators absolute right-0 top-[36rem] left-0 flex justify-center p-0 mt-4">
+                <div class="carousel-indicators absolute right-0 top-[35rem] left-0 flex justify-center p-0 mt-4">
                     <button
                     type="button"
                     data-bs-target="#carousel"
@@ -164,7 +164,7 @@
                 </div>
                 <div class="write-review w-full h-96 border-solid border border-[#E3E3E3] mt-16 shadow-lg relative">
                     <!-- WRITE REVIEW FORM -->
-                    <form method="POST" action="location.php">
+                    <form id="create-review" method="POST" action="location.php">
                         <div class="border-solid border-b border-[#E3E3E3] flex font-quicksand text-lg">
                             <input class="pr-8 pl-8 pt-4 pb-4 " type="text" placeholder="Enter your username"  name="name">
                             <input class="pr-8 pl-8 pt-4 pb-4 border-solid border-l border-[#E3E3E3]" type="text" placeholder="Review summary" name="title">
@@ -206,6 +206,9 @@
         </div>
         <!-- Footer Partial -->
         <?php include(get_path('public/partials/global/footer.php')); ?>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
