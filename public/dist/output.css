@@ -3539,12 +3539,12 @@ textarea.form-control.is-invalid {
   margin-right: 0.25rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
-}
-
 .mb-12 {
   margin-bottom: 3rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .block {
@@ -4005,6 +4005,17 @@ textarea.form-control.is-invalid {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+
+#name-error,
+#title-error,
+#body-error {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-family: Quicksand, sans-serif;
+  font-size: 18px;
+  color: red;
 }
 
 .hover\:shadow-lg:hover {
